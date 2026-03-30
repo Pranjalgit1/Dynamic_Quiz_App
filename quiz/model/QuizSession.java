@@ -56,9 +56,20 @@ public class QuizSession {
         finished = true;
         score = 0;
         for (int i = 0; i < questions.size(); i++) {
-            if (questions.get(i).isCorrect(user_ans.get(i)))
-                score += questions.get(i).getMarks();
+            Question q = questions.get(i);
+            int ansIdx = user_ans.get(i);
+            boolean isCorrect = q.isCorrect(ansIdx);
+            
+            if (isCorrect) {
+                score += q.getMarks();
+            }
+            
+            String selectedText = ansIdx >= 0 && ansIdx <= 3 ? q.getOptions()[ansIdx] : "Unanswered";
+            String correctText = q.getOptions()[q.getcorrectOptionidx()];
+            
+            quiz.manager.DatabaseManager.saveAnswer(session_id, q.getquesText(), selectedText, correctText, isCorrect);
         }
+        quiz.manager.DatabaseManager.updateSessionScore(session_id, score);
     }
 
     public Question getCurrentQuestion() {
