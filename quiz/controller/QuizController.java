@@ -88,6 +88,35 @@ public class QuizController {
         // Clear previous selection
         optionGroup.selectToggle(null);
 
+        // Restore previously selected answer for this question, if any
+        int[] userAnswers = session.getUserAnswers();
+        int currentIndex = session.getCurrentIndex();
+        if (userAnswers != null
+                && currentIndex >= 0
+                && currentIndex < userAnswers.length) {
+            int savedAnswer = userAnswers[currentIndex];
+            RadioButton toSelect = null;
+            switch (savedAnswer) {
+                case 0:
+                    toSelect = optA;
+                    break;
+                case 1:
+                    toSelect = optB;
+                    break;
+                case 2:
+                    toSelect = optC;
+                    break;
+                case 3:
+                    toSelect = optD;
+                    break;
+                default:
+                    // No valid saved answer; leave selection cleared
+                    break;
+            }
+            if (toSelect != null) {
+                optionGroup.selectToggle(toSelect);
+            }
+        }
         // Hide warning
         warningLabel.setVisible(false);
         warningLabel.setManaged(false);
