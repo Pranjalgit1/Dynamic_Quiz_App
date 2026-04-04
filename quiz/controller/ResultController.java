@@ -30,10 +30,11 @@ public class ResultController {
 
         int score = session.getScore();
         int maxScore = session.getMaxScore();
+        int userId = session.getUserId();
 
         // Use the existing QuizResult model for grade & percentage
         QuizResult result = new QuizResult(
-                1, 1, session.getSessionId(), score, maxScore, "JAVA");
+                0, userId, session.getSessionId(), score, maxScore, "JAVA");
 
         double percentage = result.getPercentage();
         String grade = result.getGrade();
