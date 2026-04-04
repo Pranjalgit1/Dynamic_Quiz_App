@@ -61,7 +61,7 @@ public class ResultController {
             case "C":
                 return "Not bad Review the topics and try again.";
             default:
-                return "Dont give up! Practice makes you perfect.";
+                return "Don't give up! Practice makes you perfect.";
         }
     }
 
