@@ -150,8 +150,8 @@ private void handleNext() {
     Toggle selected = optionGroup.getSelectedToggle();
 
     if (selected == null) {
-        warningLabel.setVisible(true);
-        warningLabel.setManaged(true);
+        session.submitAns(-1);
+        advanceQuestion();
         return;
     }
 
@@ -175,6 +175,7 @@ private void advanceQuestion() {
         loadQuestion();
     } else {
         session.finish();
+        SceneManager.setCurrentSession(session);
         SceneManager.switchScene("result.fxml");
     }
 }
