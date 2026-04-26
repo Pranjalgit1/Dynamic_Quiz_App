@@ -52,7 +52,8 @@ A premium, modern desktop JavaFX application that provides a dynamic quiz experi
 *The active quiz session featuring a progress bar, timer, and glassmorphic option cards.*
 
 ### 3. Result Dashboard
-<img width="1335" height="840" alt="Screenshot 2026-04-26 165848" src="https://github.com/user-attachments/assets/ea2781f5-25b0-48c1-a8e5-744339ffb895" />
+<img width="1338" height="846" alt="image" src="https://github.com/user-attachments/assets/d07823e9-d0de-4e8f-a810-9b09795e119c" />
+
 
 *The comprehensive split-screen results panel, showing the shiny 3D trophy, detailed stats, and performance chart.*
 
