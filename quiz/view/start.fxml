@@ -29,7 +29,7 @@
         <Label text="🧠" styleClass="brain-icon"/>
 
         <!-- Title -->
-        <Label text="Quiz Master" styleClass="title-label"/>
+        <Label text="Dynamic Quiz App" styleClass="title-label"/>
         <Label text="— Sharpen your Java instincts —" styleClass="subtitle-label"/>
 
         <!-- Spacer -->

@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 import quiz.manager.DatabaseManager;
 
 /**
- * Entry point for the Quiz Master JavaFX application.
+ * Entry point for the Dynamic Quiz App JavaFX application.
  * Initializes the SceneManager and loads the Start screen.
  */
 public class Main extends Application {
@@ -20,7 +20,7 @@ public class Main extends Application {
         SceneManager.init(primaryStage);
 
         // Configure window
-        primaryStage.setTitle("Quiz Master");
+        primaryStage.setTitle("Dynamic Quiz App");
         primaryStage.setMinWidth(900);
         primaryStage.setMinHeight(650);
 
