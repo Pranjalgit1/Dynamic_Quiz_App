@@ -42,15 +42,18 @@ A premium, modern desktop JavaFX application that provides a dynamic quiz experi
 *(Replace the paths below with the actual paths to your screenshots once you capture them)*
 
 ### 1. Start Screen
-![Start Screen](screenshot-start.png)
+<img width="1121" height="850" alt="Screenshot 2026-04-26 165809" src="https://github.com/user-attachments/assets/42ee8af5-4b17-4926-9121-c77c55bf0751" />
+
 *The landing page to enter your name and start the quiz session.*
 
 ### 2. Quiz Interface
-![Quiz Interface](screenshot-quiz.png)
+<img width="1129" height="855" alt="Screenshot 2026-04-26 165838" src="https://github.com/user-attachments/assets/13276437-e120-467b-a3a9-043114e7e436" />
+
 *The active quiz session featuring a progress bar, timer, and glassmorphic option cards.*
 
 ### 3. Result Dashboard
-![Result Dashboard](quiz/view/trophy.png)
+<img width="1335" height="840" alt="Screenshot 2026-04-26 165848" src="https://github.com/user-attachments/assets/ea2781f5-25b0-48c1-a8e5-744339ffb895" />
+
 *The comprehensive split-screen results panel, showing the shiny 3D trophy, detailed stats, and performance chart.*
 
 ## 🛠️ Technology Stack
@@ -80,6 +83,4 @@ JAVA_PBL/
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues).
 
-## 📝 License
 
-This project is licensed under the MIT License.
