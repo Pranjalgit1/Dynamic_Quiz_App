@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "JAVA_PBL_ccdeac6d"
+        },
+        {
+            "type": "java",
             "name": "Run Quiz Application",
             "request": "launch",
             "mainClass": "quiz.Main",

@@ -61,6 +61,36 @@
     -fx-background-color: rgba(255, 255, 255, 0.13);
 }
 
+.combo-box.text-input {
+    -fx-background-color: rgba(255, 255, 255, 0.09);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.18);
+    -fx-border-radius: 12;
+    -fx-padding: 4 8;
+}
+
+.combo-box.text-input .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.combo-box.text-input .arrow {
+    -fx-background-color: #00d2ff;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #2a2758;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: #2a2758;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #3a3670;
+}
+
 
 /* =============================================================
    PRIMARY BUTTON  (gradient + hover glow)
