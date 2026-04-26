@@ -3,87 +3,155 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.Priority?>
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="quiz.controller.ResultController"
            styleClass="root-pane"
-           prefWidth="900" prefHeight="650">
+           prefWidth="1050" prefHeight="700">
 
-    <!-- Main result card -->
-    <VBox alignment="CENTER" spacing="18"
-          styleClass="card" maxWidth="500" maxHeight="560">
+    <!-- Ambient background canvas for particles / glow -->
+    <Canvas fx:id="bgCanvas" width="1050" height="700"
+            mouseTransparent="true"/>
+
+    <!-- Main horizontal split -->
+    <HBox alignment="CENTER" spacing="28">
         <padding>
-            <Insets top="45" right="50" bottom="45" left="50"/>
+            <Insets top="30" right="30" bottom="30" left="30"/>
         </padding>
 
-        <Label text="Quiz Complete!" styleClass="title-label"/>
-        <Label fx:id="playerLabel" text="" styleClass="subtitle-label"/>
-        <Label fx:id="scoreLabel" text="" styleClass="score-label"/>
-        <Label fx:id="percentLabel" text="" styleClass="percent-label"
-               prefWidth="500" alignment="CENTER"/>
-        <Label fx:id="gradeLabel" text="" styleClass="grade-label"
-               prefWidth="300" alignment="CENTER"/>
-        <Label fx:id="feedbackLabel" text=""
-               styleClass="feedback-label"
-               wrapText="true" textAlignment="CENTER" alignment="CENTER"
-               maxWidth="400"/>
-
-        <Button text="Play Again"
-                onAction="#handleRestart"
-                styleClass="primary-btn"
-                prefWidth="320" prefHeight="45"/>
-        <Button text="View Detailed Analysis"
-                onAction="#handleAnalysis"
-                styleClass="primary-btn"
-                prefWidth="320" prefHeight="45"/>
-        <Button text="View Stats"
-                onAction="#handleStats"
-                styleClass="primary-btn"
-                prefWidth="320" prefHeight="45"/>
-    </VBox>
-
-    <!-- Stats popup overlay (hidden by default) -->
-    <StackPane fx:id="popupOverlay"
-               visible="false"
-               style="-fx-background-color: rgba(0,0,0,0.6);">
-
-        <VBox alignment="TOP_CENTER" spacing="16"
-              maxWidth="620" maxHeight="500"
-              style="-fx-background-color: rgba(255,255,255,0.07);
-                     -fx-background-radius: 24;
-                     -fx-border-color: rgba(255,255,255,0.12);
-                     -fx-border-radius: 24;
-                     -fx-border-width: 1;
-                     -fx-effect: dropshadow(gaussian,rgba(0,0,0,0.5),30,0,0,10);">
+        <!-- ========== LEFT PANEL — Result Summary Card ========== -->
+        <VBox alignment="CENTER" spacing="14"
+              styleClass="result-left-card"
+              prefWidth="430" maxWidth="450">
             <padding>
-                <Insets top="30" right="36" bottom="30" left="36"/>
+                <Insets top="30" right="40" bottom="30" left="40"/>
             </padding>
 
-            <!-- Popup header -->
-            <HBox alignment="CENTER_LEFT" spacing="16">
-                <Label text="Quiz Statistics"
-                       styleClass="title-label"
-                       style="-fx-font-size: 24;"
-                       HBox.hgrow="ALWAYS"/>
-                <Button text="X"
-                        onAction="#handleCloseStats"
-                        style="-fx-background-color: rgba(255,255,255,0.1);
-                               -fx-text-fill: white;
-                               -fx-font-size: 14;
-                               -fx-font-weight: bold;
-                               -fx-background-radius: 50;
-                               -fx-min-width: 32;
-                               -fx-min-height: 32;
-                               -fx-cursor: hand;"/>
+            <!-- Trophy icon -->
+            <ImageView fx:id="trophyImage" fitWidth="120" fitHeight="120" preserveRatio="true">
+                <image>
+                    <Image url="@trophy.png"/>
+                </image>
+            </ImageView>
+
+            <!-- Title -->
+            <Label text="Quiz Complete!" styleClass="result-title"/>
+
+            <!-- Subtitle -->
+            <Label fx:id="playerLabel" text="Well played." styleClass="result-subtitle"/>
+
+            <!-- Score box -->
+            <VBox alignment="CENTER" spacing="4" styleClass="score-box">
+                <padding>
+                    <Insets top="18" right="20" bottom="18" left="20"/>
+                </padding>
+                <Label fx:id="scoreLabel" text="7 / 20" styleClass="result-score-big"/>
+                <HBox alignment="CENTER" spacing="6">
+                    <Label text="You scored" styleClass="result-score-sub"/>
+                    <Label fx:id="percentLabel" text="35.0%" styleClass="result-percent-highlight"/>
+                </HBox>
+            </VBox>
+
+            <!-- Grade badge -->
+            <HBox alignment="CENTER" spacing="10" fx:id="gradeBox" styleClass="grade-badge">
+                <padding>
+                    <Insets top="10" right="24" bottom="10" left="24"/>
+                </padding>
+                <Label fx:id="gradeIcon" text="F" styleClass="grade-icon-circle"/>
+                <Label fx:id="gradeLabel" text="Grade: F" styleClass="grade-text"/>
             </HBox>
 
-            <!-- Canvas for bar chart -->
-            <Canvas fx:id="chartCanvas" width="548" height="340"/>
+            <!-- Motivational text -->
+            <HBox alignment="CENTER" spacing="6">
+                <Label text="✨" style="-fx-font-size: 14;"/>
+                <Label fx:id="feedbackLabel" text="Don't give up! Practice makes you perfect."
+                       styleClass="result-motivation" wrapText="true"
+                       textAlignment="CENTER" maxWidth="340"/>
+            </HBox>
 
+            <!-- Buttons -->
+            <VBox alignment="CENTER" spacing="10">
+                <padding>
+                    <Insets top="6" right="0" bottom="0" left="0"/>
+                </padding>
+
+                <Button text="▶  Play Again"
+                        onAction="#handleRestart"
+                        styleClass="result-primary-btn"
+                        prefWidth="340" prefHeight="44"/>
+
+                <Button text="📊  View Detailed Analysis"
+                        onAction="#handleAnalysis"
+                        styleClass="result-secondary-btn"
+                        prefWidth="340" prefHeight="42"/>
+
+                <Button text="📈  View Stats"
+                        onAction="#handleStats"
+                        styleClass="result-tertiary-btn"
+                        prefWidth="340" prefHeight="42"/>
+            </VBox>
         </VBox>
-    </StackPane>
 
+        <!-- ========== RIGHT PANEL — Statistics Dashboard ========== -->
+        <VBox fx:id="statsPanel" alignment="TOP_LEFT" spacing="14"
+              styleClass="result-right-card" visible="false" managed="false"
+              prefWidth="500" maxWidth="540">
+            <padding>
+                <Insets top="24" right="28" bottom="24" left="28"/>
+            </padding>
+
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Quiz Statistics" styleClass="stats-title"
+                       HBox.hgrow="ALWAYS"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="✕" onAction="#handleCloseStats"
+                        styleClass="stats-close-btn"/>
+            </HBox>
+
+            <!-- Stats row: 4 mini-cards -->
+            <HBox fx:id="statsRow" alignment="CENTER" spacing="12">
+                <padding>
+                    <Insets top="4" bottom="4"/>
+                </padding>
+                <!-- Cards are created programmatically -->
+            </HBox>
+
+            <!-- Performance Overview chart -->
+            <VBox spacing="6">
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <Label text="📊" style="-fx-font-size: 16;"/>
+                    <Label text="Performance Overview" styleClass="chart-section-title"/>
+                </HBox>
+                <StackPane styleClass="chart-container">
+                    <Canvas fx:id="chartCanvas" width="470" height="230"/>
+                </StackPane>
+            </VBox>
+
+            <!-- Insights section -->
+            <VBox spacing="8" styleClass="insights-card">
+                <padding>
+                    <Insets top="14" right="18" bottom="14" left="18"/>
+                </padding>
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <Label text="💡" style="-fx-font-size: 18;"/>
+                    <Label text="Insights" styleClass="insights-title"/>
+                </HBox>
+                <Label fx:id="insightLine1"
+                       text="Review incorrect answers to improve your score."
+                       styleClass="insights-text" wrapText="true"/>
+                <Label fx:id="insightLine2"
+                       text="You did great in Easy questions. Keep practicing!"
+                       styleClass="insights-text" wrapText="true"/>
+            </VBox>
+        </VBox>
+
+    </HBox>
 </StackPane>

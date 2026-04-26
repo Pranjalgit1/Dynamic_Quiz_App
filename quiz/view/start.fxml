@@ -4,41 +4,52 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<!-- Start Screen: Title + Name Input + Start Button -->
 <StackPane xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="quiz.controller.StartController"
            styleClass="root-pane"
-           prefWidth="900" prefHeight="650">
+           prefWidth="960" prefHeight="720"
+           onKeyPressed="#handleKeyPress">
 
-    <VBox alignment="CENTER" spacing="25"
-          styleClass="card" maxWidth="460" maxHeight="480">
+    <!-- Main Card -->
+    <VBox alignment="CENTER" spacing="18"
+          styleClass="card" maxWidth="520" maxHeight="620">
 
         <padding>
-            <Insets top="50" right="50" bottom="50" left="50"/>
+            <Insets top="40" right="48" bottom="32" left="48"/>
         </padding>
+
+        <!-- Brain Icon -->
+        <Label text="🧠" styleClass="brain-icon"/>
 
         <!-- Title -->
         <Label text="Quiz Master" styleClass="title-label"/>
-        <Label text="Test Your Java Knowledge" styleClass="subtitle-label"/>
+        <Label text="— Sharpen your Java instincts —" styleClass="subtitle-label"/>
+
+        <!-- Spacer -->
+        <Region prefHeight="6"/>
 
         <!-- Name input group -->
-        <VBox spacing="8">
-            <Label text="Your Name" styleClass="field-label"/>
+        <VBox spacing="8" styleClass="form-group">
+            <Label text="👤  Your Name" styleClass="field-label"/>
             <TextField fx:id="nameField"
                        promptText="Enter your name..."
                        styleClass="text-input"/>
         </VBox>
 
-        <VBox spacing="8">
-            <Label text="Choose Topic" styleClass="field-label"/>
+        <!-- Topic dropdown group -->
+        <VBox spacing="8" styleClass="form-group">
+            <Label text="📋  Choose Topic" styleClass="field-label"/>
             <ComboBox fx:id="topicCombo"
                       promptText="Select topic"
                       styleClass="text-input"
-                      prefWidth="360"/>
+                      maxWidth="1.7976931348623157E308"/>
         </VBox>
 
         <!-- Validation error (hidden by default) -->
@@ -47,15 +58,39 @@
                visible="false" managed="false"/>
 
         <!-- Start button -->
-        <Button text="Start Quiz"
+        <Button text="🚀  Start Quiz  →"
                 onAction="#handleStart"
                 styleClass="primary-btn"
-                prefWidth="200" prefHeight="45"/>
+                maxWidth="1.7976931348623157E308"
+                prefHeight="52"/>
 
+        <!-- Loading label -->
         <Label fx:id="loadingLabel"
-       text="Loading questions..."
-       visible="false"
-       managed="false"
-       style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+               text="Loading questions..."
+               visible="false" managed="false"
+               styleClass="loading-label"/>
+
+        <!-- Separator -->
+        <Separator styleClass="info-separator"/>
+
+        <!-- Bottom info row -->
+        <HBox alignment="CENTER" spacing="24" styleClass="info-row">
+            <VBox alignment="CENTER" spacing="2">
+                <Label text="❓" styleClass="info-icon"/>
+                <Label text="10 Questions" styleClass="info-title"/>
+            </VBox>
+            <VBox alignment="CENTER" spacing="2">
+                <Label text="⏱" styleClass="info-icon"/>
+                <Label text="~2 Minutes" styleClass="info-title"/>
+            </VBox>
+            <VBox alignment="CENTER" spacing="2">
+                <Label text="🏆" styleClass="info-icon"/>
+                <Label text="Instant Results" styleClass="info-title"/>
+            </VBox>
+        </HBox>
+
+        <!-- Hint text -->
+        <Label text="⚡ Press Enter to start" styleClass="hint-label"/>
+
     </VBox>
 </StackPane>

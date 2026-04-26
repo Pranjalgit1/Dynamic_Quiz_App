@@ -3,6 +3,8 @@ package quiz.controller;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -92,6 +94,13 @@ private void handleStart() {
 
     pause.setOnFinished(ev -> SceneManager.switchScene("quiz.fxml"));
     pause.play();
+}
+
+@FXML
+private void handleKeyPress(KeyEvent event) {
+    if (event.getCode() == KeyCode.ENTER) {
+        handleStart();
+    }
 }
 
 private void showError(String msg) {
