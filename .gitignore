@@ -11,3 +11,7 @@ target/
 
 # OS files
 .DS_Store
+
+# Ignore data files
+Javainterview.pdf
+_javainterview_text.txt
