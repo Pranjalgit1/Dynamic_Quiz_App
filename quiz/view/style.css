@@ -1,0 +1,259 @@
+/* ============================================================
+   Quiz Master — JavaFX Stylesheet
+   Modern dark gradient theme with glassmorphism cards
+   ============================================================ */
+
+/* ===== ROOT BACKGROUND ===== */
+.root-pane {
+    -fx-background-color: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+}
+
+/* ===== CARD CONTAINER (glassmorphism) ===== */
+.card {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-radius: 24;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.45), 30, 0, 0, 10);
+}
+
+
+/* =============================================================
+   TYPOGRAPHY
+   ============================================================= */
+
+.title-label {
+    -fx-font-size: 40;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.subtitle-label {
+    -fx-font-size: 16;
+    -fx-text-fill: #9e9eb8;
+}
+
+.field-label {
+    -fx-font-size: 14;
+    -fx-text-fill: #c0c0d0;
+    -fx-font-weight: bold;
+}
+
+
+/* =============================================================
+   TEXT INPUT
+   ============================================================= */
+
+.text-input {
+    -fx-background-color: rgba(255, 255, 255, 0.09);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.18);
+    -fx-border-radius: 12;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #6a6a80;
+    -fx-padding: 12 16;
+    -fx-font-size: 15;
+}
+
+.text-input:focused {
+    -fx-border-color: #00d2ff;
+    -fx-background-color: rgba(255, 255, 255, 0.13);
+}
+
+
+/* =============================================================
+   PRIMARY BUTTON  (gradient + hover glow)
+   ============================================================= */
+
+.primary-btn {
+    -fx-background-color: linear-gradient(to right, #00d2ff, #7b2ff7);
+    -fx-text-fill: white;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+    -fx-padding: 10 30;
+}
+
+.primary-btn:hover {
+    -fx-background-color: linear-gradient(to right, #33ddff, #9955ff);
+    -fx-effect: dropshadow(gaussian, rgba(0, 210, 255, 0.45), 18, 0, 0, 0);
+}
+
+.primary-btn:pressed {
+    -fx-background-color: linear-gradient(to right, #00b8e6, #6a1fd6);
+}
+
+.secondary-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #00d2ff;
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-border-color: #00d2ff;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-padding: 10 30;
+}
+
+.secondary-btn:hover {
+    -fx-background-color: rgba(0, 210, 255, 0.1);
+}
+
+/* =============================================================
+   ERROR / WARNING LABEL
+   ============================================================= */
+
+.error-label {
+    -fx-text-fill: #ff5252;
+    -fx-font-size: 13;
+}
+
+
+/* =============================================================
+   QUIZ SCREEN — HEADER
+   ============================================================= */
+
+.counter-label {
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00d2ff;
+}
+
+.timer-box {
+    -fx-background-color: rgba(255, 82, 82, 0.12);
+    -fx-background-radius: 10;
+    -fx-padding: 6 14;
+    -fx-border-color: rgba(255, 82, 82, 0.28);
+    -fx-border-radius: 10;
+}
+
+.timer-text {
+    -fx-text-fill: #b0b0b0;
+    -fx-font-size: 14;
+}
+
+.timer-label {
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+
+/* =============================================================
+   QUIZ SCREEN — QUESTION
+   ============================================================= */
+
+.question-label {
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0 5 0;
+}
+
+
+/* =============================================================
+   RADIO BUTTON OPTIONS (styled as cards)
+   ============================================================= */
+
+.option-radio {
+    -fx-text-fill: #e0e0e8;
+    -fx-font-size: 15;
+    -fx-padding: 14 18;
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+}
+
+.option-radio:hover {
+    -fx-background-color: rgba(0, 210, 255, 0.10);
+    -fx-border-color: rgba(0, 210, 255, 0.35);
+}
+
+.option-radio:selected {
+    -fx-background-color: rgba(0, 210, 255, 0.14);
+    -fx-border-color: #00d2ff;
+}
+
+/* Radio dot */
+.option-radio>.radio {
+    -fx-background-color: transparent;
+    -fx-border-color: #6e6e80;
+    -fx-border-radius: 50;
+    -fx-padding: 3;
+}
+
+.option-radio:selected>.radio {
+    -fx-border-color: #00d2ff;
+}
+
+.option-radio>.radio>.dot {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50;
+    -fx-padding: 4;
+}
+
+.option-radio:selected>.radio>.dot {
+    -fx-background-color: #00d2ff;
+    -fx-background-radius: 50;
+}
+
+
+/* =============================================================
+   PROGRESS BAR
+   ============================================================= */
+
+.quiz-progress {
+    -fx-accent: #00d2ff;
+}
+
+.quiz-progress>.track {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 4;
+}
+
+.quiz-progress>.bar {
+    -fx-background-color: linear-gradient(to right, #00d2ff, #7b2ff7);
+    -fx-background-radius: 4;
+    -fx-background-insets: 0;
+}
+
+
+/* =============================================================
+   RESULT SCREEN
+   ============================================================= */
+
+.score-label {
+    -fx-font-size: 54;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 10 0 0 0;
+}
+
+.percent-label {
+    -fx-font-size: 22;
+    -fx-text-fill: #00d2ff;
+    -fx-font-weight: bold;
+}
+
+.grade-label {
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00e676;
+    -fx-padding: 5 20;
+    -fx-background-color: rgba(0, 230, 118, 0.12);
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(0, 230, 118, 0.30);
+    -fx-border-radius: 10;
+}
+
+.feedback-label {
+    -fx-font-size: 16;
+    -fx-text-fill: #b0b0c0;
+    -fx-padding: 5 0;
+}
