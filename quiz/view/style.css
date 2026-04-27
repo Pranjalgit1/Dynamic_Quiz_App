@@ -1,14 +1,8 @@
-/* ============================================================
-   Dynamic Quiz App — JavaFX Stylesheet
-   Premium dark futuristic theme · Glassmorphism · Neon accents
-   ============================================================ */
-
-/* ===== ROOT BACKGROUND ===== */
 .root-pane {
     -fx-background-color: linear-gradient(to bottom right, #080618, #12082e, #1a0a3e, #0d0620);
 }
 
-/* ===== CARD CONTAINER (glassmorphism) ===== */
+
 .card {
     -fx-background-color: rgba(20, 14, 50, 0.85);
     -fx-background-radius: 28;
@@ -19,9 +13,7 @@
 }
 
 
-/* =============================================================
-   TYPOGRAPHY
-   ============================================================= */
+
 
 .brain-icon {
     -fx-font-size: 42;
@@ -61,9 +53,7 @@
 }
 
 
-/* =============================================================
-   TEXT INPUT
-   ============================================================= */
+
 
 .text-input {
     -fx-background-color: rgba(255, 255, 255, 0.06);
@@ -125,9 +115,7 @@
 }
 
 
-/* =============================================================
-   PRIMARY BUTTON  (gradient + hover glow)
-   ============================================================= */
+
 
 .primary-btn {
     -fx-background-color: linear-gradient(to right, #00c6ff, #7b2ff7, #c471ed);
@@ -171,9 +159,7 @@
 }
 
 
-/* =============================================================
-   ERROR / WARNING LABEL
-   ============================================================= */
+
 
 .error-label {
     -fx-text-fill: #ff5252;
@@ -183,15 +169,13 @@
 }
 
 
-/* =============================================================
-   INFO ROW (bottom section of start screen)
-   ============================================================= */
+
 
 .info-separator {
     -fx-padding: 4 0 0 0;
 }
 
-.info-separator > .line {
+.info-separator>.line {
     -fx-border-color: rgba(120, 100, 255, 0.12);
     -fx-border-width: 0 0 1 0;
 }
@@ -211,9 +195,7 @@
 }
 
 
-/* =============================================================
-   QUIZ SCREEN — HEADER
-   ============================================================= */
+
 
 .counter-label {
     -fx-font-size: 20;
@@ -242,9 +224,7 @@
 }
 
 
-/* =============================================================
-   QUIZ SCREEN — QUESTION
-   ============================================================= */
+
 
 .question-label {
     -fx-font-size: 20;
@@ -254,9 +234,7 @@
 }
 
 
-/* =============================================================
-   RADIO BUTTON OPTIONS (styled as cards)
-   ============================================================= */
+
 
 .option-radio {
     -fx-text-fill: #d0c8f0;
@@ -281,7 +259,7 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 210, 255, 0.15), 8, 0, 0, 0);
 }
 
-/* Radio dot */
+
 .option-radio>.radio {
     -fx-background-color: transparent;
     -fx-border-color: #5a5878;
@@ -306,9 +284,7 @@
 }
 
 
-/* =============================================================
-   PROGRESS BAR
-   ============================================================= */
+
 
 .quiz-progress {
     -fx-accent: #00d2ff;
@@ -326,11 +302,9 @@
 }
 
 
-/* =============================================================
-   RESULT SCREEN — NEW DASHBOARD LAYOUT
-   ============================================================= */
 
-/* --- Left panel: Result Summary Card --- */
+
+
 .result-left-card {
     -fx-background-color: rgba(16, 10, 44, 0.92);
     -fx-background-radius: 24;
@@ -340,7 +314,7 @@
     -fx-effect: dropshadow(gaussian, rgba(80, 40, 220, 0.40), 40, 0, 0, 8);
 }
 
-/* --- Right panel: Stats Dashboard --- */
+
 .result-right-card {
     -fx-background-color: rgba(18, 14, 48, 0.95);
     -fx-background-radius: 22;
@@ -350,14 +324,14 @@
     -fx-effect: dropshadow(gaussian, rgba(60, 40, 180, 0.30), 30, 0, 0, 6);
 }
 
-/* --- Trophy icon --- */
+
 .trophy-icon {
     -fx-font-size: 64;
     -fx-effect: dropshadow(gaussian, rgba(255, 200, 0, 0.5), 20, 0, 0, 0);
     -fx-padding: 0 0 4 0;
 }
 
-/* --- Result Title --- */
+
 .result-title {
     -fx-font-size: 38;
     -fx-font-weight: bold;
@@ -365,14 +339,14 @@
     -fx-effect: dropshadow(gaussian, rgba(120, 80, 255, 0.5), 14, 0, 0, 0);
 }
 
-/* --- Result Subtitle --- */
+
 .result-subtitle {
     -fx-font-size: 16;
     -fx-text-fill: rgba(180, 170, 220, 0.6);
     -fx-font-style: italic;
 }
 
-/* --- Score box --- */
+
 .score-box {
     -fx-background-color: rgba(0, 180, 255, 0.06);
     -fx-background-radius: 16;
@@ -400,7 +374,7 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 210, 255, 0.35), 6, 0, 0, 0);
 }
 
-/* --- Grade badge --- */
+
 .grade-badge {
     -fx-background-color: rgba(255, 82, 82, 0.08);
     -fx-background-radius: 14;
@@ -430,13 +404,13 @@
     -fx-text-fill: #ff5252;
 }
 
-/* --- Motivation --- */
+
 .result-motivation {
     -fx-font-size: 14;
     -fx-text-fill: rgba(160, 150, 200, 0.55);
 }
 
-/* --- Primary CTA: Play Again (gradient) --- */
+
 .result-primary-btn {
     -fx-background-color: linear-gradient(to right, #00c6ff, #7b2ff7, #c471ed);
     -fx-text-fill: white;
@@ -459,7 +433,7 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 180, 255, 0.2), 10, 0, 0, 2);
 }
 
-/* --- Secondary button --- */
+
 .result-secondary-btn {
     -fx-background-color: rgba(255, 255, 255, 0.05);
     -fx-text-fill: #c0b8e8;
@@ -479,7 +453,7 @@
     -fx-translate-y: -1;
 }
 
-/* --- Tertiary button --- */
+
 .result-tertiary-btn {
     -fx-background-color: rgba(255, 255, 255, 0.04);
     -fx-text-fill: #9e9eb8;
@@ -500,9 +474,7 @@
 }
 
 
-/* =============================================================
-   STATS PANEL (Right side)
-   ============================================================= */
+
 
 .stats-title {
     -fx-font-size: 24;
@@ -530,7 +502,7 @@
     -fx-effect: dropshadow(gaussian, rgba(255, 82, 82, 0.3), 8, 0, 0, 0);
 }
 
-/* --- Stat mini-cards --- */
+
 .stat-mini-card {
     -fx-background-color: rgba(255, 255, 255, 0.05);
     -fx-background-radius: 16;
@@ -546,7 +518,7 @@
     -fx-effect: dropshadow(gaussian, rgba(80, 60, 180, 0.25), 14, 0, 0, 3);
 }
 
-/* --- Chart section --- */
+
 .chart-section-title {
     -fx-font-size: 15;
     -fx-font-weight: bold;
@@ -562,7 +534,7 @@
     -fx-padding: 4;
 }
 
-/* --- Insights card --- */
+
 .insights-card {
     -fx-background-color: rgba(255, 255, 255, 0.04);
     -fx-background-radius: 16;
@@ -583,7 +555,7 @@
     -fx-padding: 0 0 0 28;
 }
 
-/* legacy compat — keep old classes working for other screens */
+
 .score-label {
     -fx-font-size: 54;
     -fx-font-weight: bold;
